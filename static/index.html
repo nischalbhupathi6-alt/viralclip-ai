@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViralClip AI - Faceless YouTube Shorts & Viral Video Maker</title>
+  
+  <!-- SEO & Search Indexing -->
+  <meta name="description" content="Turn any YouTube video or audio into viral 9:16 Shorts with Alex Hormozi captions, split-screen gameplay, KineMaster Pro multi-track editor & 60FPS export.">
+  <meta name="keywords" content="AI video clipper, YouTube shorts generator, faceless shorts, Alex Hormozi captions, split screen gameplay, viral shorts maker, TikTok editor, Instagram Reels maker, free AI clipper">
+  <meta name="author" content="ViralClip AI">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://viralclip-ai.onrender.com/">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ViralClip AI">
+  <meta property="og:url" content="https://viralclip-ai.onrender.com/">
+  <meta property="og:title" content="ViralClip AI - Turn Any Video into Viral 9:16 Shorts">
+  <meta property="og:description" content="Automated AI Clipper with split-screen gameplay, Alex Hormozi captions, KineMaster Pro multi-track editor & instant 60fps MP4 export.">
+  <meta property="og:image" content="https://viralclip-ai.onrender.com/icon-512.png">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ViralClip AI - Faceless YouTube Shorts & Viral Video Maker">
+  <meta name="twitter:description" content="Create viral 9:16 vertical shorts from any YouTube link in seconds. Split-screen, Hormozi captions, 60fps render.">
+  <meta name="twitter:image" content="https://viralclip-ai.onrender.com/icon-512.png">
+
+  <!-- PWA & Mobile Web App -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2.7.0">
+
+  <!-- Google Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ViralClip AI",
+    "url": "https://viralclip-ai.onrender.com/",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "description": "AI-powered automated video clipper that extracts viral segments from YouTube videos and formats them into 9:16 vertical shorts with Hormozi captions, split-screen gameplay, and multi-track audio.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1280"
+    }
+  }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google AdSense Header Slot (Replace 'ca-pub-XXXXXXXXXXXXXXXX' with your AdSense Publisher ID) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body class="bg-dark text-light antialiased">
+  
+  <!-- Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">ViralClip <span class="gradient-text">AI</span></span>
+          <span class="brand-badge">FACELESS SHORTS PRO</span>
+        </div>
+      </div>
+
+      <nav class="header-nav">
+        <a href="#clipper-section" class="nav-link active"><i data-lucide="scissors"></i> AI Clipper</a>
+        <a href="#studio-section" class="nav-link"><i data-lucide="smartphone"></i> 9:16 Studio</a>
+        <a href="#pro-editor-section" class="nav-link nav-pro-badge" id="nav-link-pro"><i data-lucide="film"></i> KineMaster Pro <span class="badge-pro-pill" id="nav-pro-badge-pill">ULTRA</span></a>
+        <a href="#pricing-section" class="nav-link"><i data-lucide="crown"></i> Pricing</a>
+        <a href="#monetization-section" class="nav-link"><i data-lucide="dollar-sign"></i> Earn Money</a>
+        <a href="#calculator-section" class="nav-link"><i data-lucide="calculator"></i> Income Calculator</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Interactive User Subscription Tier Badge -->
+        <div id="user-tier-badge" class="tier-badge-pill" title="Subscription Status - Click to manage" onclick="window.openSubscriptionModal()">
+          <span class="tier-icon" id="header-tier-icon">🛠️</span>
+          <span class="tier-label" id="header-tier-text">Dev Mode</span>
+          <span class="tier-sub" id="header-tier-sub">Unlimited</span>
+        </div>
+
+        <button id="pwa-install-btn" class="btn btn-secondary btn-sm" style="display: none;">
+          <i data-lucide="download-cloud"></i> <span>Install App</span>
+        </button>
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>FFmpeg 9.0 Active</span>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="scrollToClipper()">
+          <i data-lucide="sparkles"></i> Make New Short
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Intake Hub -->
+  <main class="main-content">
+    <section id="clipper-section" class="hero-section">
+      <div class="hero-badge">
+        <i data-lucide="flame"></i> Turn Any YouTube Video Into Viral 9:16 Shorts
+      </div>
+      <h1 class="hero-heading">
+        Extract <span class="gradient-text">Funny & Viral Clips</span> in Seconds<br>
+        Earn Passive Income Like a Faceless AI Channel
+      </h1>
+      <p class="hero-subtext">
+        Auto-detect punchlines, add Hormozi-style animated captions, generate split-screen gameplay,
+        and export ready-to-upload YouTube Shorts, TikToks, and Reels with 1-click.
+      </p>
+
+      <!-- Main Input Card -->
+      <div class="input-card card-glow">
+        <div class="url-input-group">
+          <div class="input-icon">
+            <i data-lucide="youtube"></i>
+          </div>
+          <input 
+            type="text" 
+            id="youtube-url-input" 
+            placeholder="Paste any YouTube video URL or search topic (e.g. podcasts, comedy, MrBeast)..." 
+            autocomplete="off"
+          >
+          <button id="paste-btn" class="btn btn-secondary btn-icon-only" title="Paste from clipboard">
+            <i data-lucide="clipboard"></i>
+          </button>
+        </div>
+
+        <!-- Custom Controls -->
+        <div class="controls-row">
+          <div class="control-group">
+            <label class="control-label"><i data-lucide="target"></i> Clip Objective</label>
+            <div class="pill-group" id="objective-pills">
+              <button class="pill-btn active" data-objective="funny">
+                <span>🤣</span> Funny & Roasts
+              </button>
+              <button class="pill-btn" data-objective="hook">
+                <span>🔥</span> Mind-Blowing Hooks
+              </button>
+              <button class="pill-btn" data-objective="money">
+                <span>💰</span> Money & Hustle
+              </button>
+              <button class="pill-btn" data-objective="wisdom">
+                <span>🧠</span> Wisdom & Advice
+              </button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label"><i data-lucide="clock"></i> Duration</label>
+            <div class="pill-group" id="duration-pills">
+              <button class="pill-btn" data-duration="15">15s</button>
+              <button class="pill-btn active" data-duration="30">30s (Sweet Spot)</button>
+              <button class="pill-btn" data-duration="60">60s</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label"><i data-lucide="layout"></i> Video Layout</label>
+            <div class="pill-group" id="hero-layout-pills">
+              <button class="pill-btn active" data-layout="crop">
+                <span>📱</span> Full 9:16 (No Split)
+              </button>
+              <button class="pill-btn" data-layout="split">
+                <span>🎮</span> Split-Screen
+              </button>
+              <button class="pill-btn" data-layout="blur">
+                <span>✨</span> Fit & Blurred
+              </button>
+              <button class="pill-btn" data-layout="fit">
+                <span>⬛</span> Letterbox
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Prompt (Optional) -->
+        <div class="custom-prompt-container">
+          <div class="custom-prompt-header" onclick="toggleCustomPrompt()">
+            <span><i data-lucide="sliders-horizontal"></i> Advanced: Search Specific Moments / Keywords (Optional)</span>
+            <i data-lucide="chevron-down" id="prompt-chevron"></i>
+          </div>
+          <div class="custom-prompt-body" id="custom-prompt-body" style="display: none;">
+            <input 
+              type="text" 
+              id="custom-prompt-input" 
+              placeholder="e.g. 'Find moments discussing Elon Musk' or 'Every funny joke about marriage'"
+            >
+          </div>
+        </div>
+
+        <!-- Submit & Upload Row -->
+        <div class="action-row">
+          <div class="upload-link-wrap">
+            <label for="video-file-upload" class="upload-file-btn">
+              <i data-lucide="upload-cloud"></i> Or upload local video file
+            </label>
+            <input type="file" id="video-file-upload" accept="video/mp4,video/quicktime,video/webm" style="display: none;">
+            <span id="uploaded-filename" class="file-name-hint"></span>
+          </div>
+
+          <button id="analyze-btn" class="btn btn-primary btn-lg pulse-glow">
+            <i data-lucide="sparkles"></i>
+            <span>Generate Viral Shorts</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sample Viral Videos Quick Picker -->
+      <div class="sample-picker">
+        <span class="sample-label"><i data-lucide="sparkles"></i> Try 1-Click Viral Samples:</span>
+        <div class="sample-pills" id="sample-pills-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Google AdSense - Top Responsive Banner Slot -->
+      <div class="adsense-slot-container leaderboard-ad">
+        <div class="ad-badge-label">ADVERTISEMENT</div>
+        <ins class="adsbygoogle"
+             style="display:block; min-height:90px;"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <div class="ad-placeholder-preview">
+          <i data-lucide="layout"></i>
+          <span>Google AdSense Display Banner (Activates upon entering Publisher ID)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loading State -->
+    <section id="loading-section" class="loading-section" style="display: none;">
+      <div class="loader-card">
+        <div class="ai-orb"></div>
+        <h3 id="loader-status" class="loader-title">Analyzing Video Cadence...</h3>
+        <p id="loader-desc" class="loader-desc">Scanning transcript for high-retention punchlines and viral emotional spikes</p>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar-fill" id="loader-progress"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results-section" class="results-section" style="display: none;">
+      <div class="section-header">
+        <div>
+          <span class="sub-badge"><i data-lucide="check-circle-2"></i> Analysis Complete</span>
+          <h2 class="section-title">Discovered <span class="gradient-text" id="clips-count">3</span> Viral Shorts</h2>
+          <p class="section-subtext" id="video-title-display">Video: Loading title...</p>
+        </div>
+        <button class="btn btn-outline btn-sm" onclick="scrollToClipper()">
+          <i data-lucide="rotate-ccw"></i> Analyze Another
+        </button>
+      </div>
+
+      <!-- Clips Grid -->
+      <div class="clips-grid" id="clips-grid">
+        <!-- Rendered dynamically -->
+      </div>
+    </section>
+
+    <!-- 9:16 Studio & Mobile Previewer Section -->
+    <section id="studio-section" class="studio-section" style="display: none;">
+      <div class="studio-container">
+        
+        <!-- Left: Realistic Mobile Phone Mockup -->
+        <div class="phone-column">
+
+          <!-- Prominent Layout Selector DIRECTLY Above the Phone Frame -->
+          <div class="phone-top-layout-bar">
+            <div class="layout-bar-header">
+              <span class="layout-bar-label"><i data-lucide="layout"></i> VIDEO LAYOUT:</span>
+              <span class="layout-active-badge" id="layout-active-name">📱 Full 9:16 (No Split)</span>
+            </div>
+            <div class="phone-tabs-row">
+              <button type="button" class="phone-tab-btn active" data-layout="crop" title="Single video filling full vertical screen with NO split">
+                <span class="tab-emoji">📱</span>
+                <span class="tab-text">Full (No Split)</span>
+              </button>
+              <button type="button" class="phone-tab-btn" data-layout="split" title="Split screen: video on top, gameplay on bottom">
+                <span class="tab-emoji">🎮</span>
+                <span class="tab-text">Split Screen</span>
+              </button>
+              <button type="button" class="phone-tab-btn" data-layout="blur" title="Centered video with blurred background">
+                <span class="tab-emoji">✨</span>
+                <span class="tab-text">Blur Fit</span>
+              </button>
+              <button type="button" class="phone-tab-btn" data-layout="fit" title="Clean original video with black letterbox bars">
+                <span class="tab-emoji">⬛</span>
+                <span class="tab-text">Letterbox</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="phone-frame">
+            <div class="phone-speaker"></div>
+            <div class="phone-island"></div>
+            
+            <!-- Video Canvas Wrapper -->
+            <div class="phone-screen" id="phone-screen">
+              
+              <!-- Video Layer Container (Default: Full 9:16 Single Video) -->
+              <div class="short-video-container crop-mode" id="short-video-container">
+                <!-- Top Primary Video -->
+                <video id="studio-primary-video" class="video-top" loop playsinline muted></video>
+
+                <!-- Video Loading Indicator Overlay -->
+                <div class="video-loading-overlay" id="video-loading-overlay" style="display: none;">
+                  <div class="spinner-sm"></div>
+                  <span id="video-loading-text">Loading scene video...</span>
+                </div>
+
+                <!-- Bottom Satisfying Gameplay Video (in Split Mode) -->
+                <video id="studio-gameplay-video" class="video-bottom" loop playsinline muted>
+                  <source src="/assets/satisfying_loop.mp4" type="video/mp4">
+                </video>
+
+                <!-- Top Hook Banner Overlay -->
+                <div class="hook-banner-overlay" id="preview-hook-banner">
+                  <span>WAIT TILL THE END 😂💀</span>
+                </div>
+
+                <!-- Animated Dynamic Subtitles Overlay -->
+                <div class="subtitles-overlay" id="preview-subtitles">
+                  <div class="subtitle-word" id="subtitle-active-text">HE WAS NOT READY FOR THIS! 🔥</div>
+                </div>
+
+                <!-- Realistic YouTube Shorts UI Overlays -->
+                <div class="shorts-ui-overlay">
+                  <div class="shorts-right-actions">
+                    <div class="action-item">
+                      <div class="action-btn"><i data-lucide="thumbs-up"></i></div>
+                      <span class="action-count">248K</span>
+                    </div>
+                    <div class="action-item">
+                      <div class="action-btn"><i data-lucide="thumbs-down"></i></div>
+                      <span class="action-count">Dislike</span>
+                    </div>
+                    <div class="action-item">
+                      <div class="action-btn"><i data-lucide="message-square"></i></div>
+                      <span class="action-count">1.4K</span>
+                    </div>
+                    <div class="action-item">
+                      <div class="action-btn"><i data-lucide="share-2"></i></div>
+                      <span class="action-count">Share</span>
+                    </div>
+                    <div class="action-item">
+                      <div class="action-btn action-sound"><i data-lucide="disc"></i></div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Channel & Title Info -->
+                  <div class="shorts-bottom-info">
+                    <div class="channel-row">
+                      <div class="channel-avatar">VC</div>
+                      <span class="channel-name">@FacelessShorts</span>
+                      <button class="subscribe-btn">Subscribe</button>
+                    </div>
+                    <p class="shorts-caption" id="preview-caption">Bro really thought he could get away with that! 💀 #Shorts #viral #funny</p>
+                  </div>
+                </div>
+
+                <!-- Play/Pause Big Center Overlay -->
+                <div class="play-state-overlay" id="play-pause-overlay">
+                  <i data-lucide="play" id="play-state-icon"></i>
+                </div>
+              </div>
+
+              <!-- Interactive Player Scrub Bar -->
+              <div class="scrub-bar-container">
+                <div class="scrub-progress" id="player-progress-bar"></div>
+              </div>
+            </div>
+
+            <div class="phone-chin"></div>
+          </div>
+
+          <!-- Playback Controls Bar -->
+          <div class="playback-controls">
+            <button class="btn btn-secondary btn-sm" id="toggle-play-btn">
+              <i data-lucide="play" id="btn-play-icon"></i> Play
+            </button>
+            <button class="btn btn-primary btn-sm" id="toggle-mute-btn">
+              <i data-lucide="volume-2" id="btn-volume-icon"></i> Unmute Voice
+            </button>
+            <span class="time-display" id="player-time-display">0:00 / 0:30</span>
+          </div>
+
+          <!-- Quick Layout Switcher Directly Below Phone Preview (Always Visible) -->
+          <div class="phone-quick-layout">
+            <span class="phone-layout-title"><i data-lucide="layout"></i> Video Layout:</span>
+            <div class="phone-layout-btn-group">
+              <button class="phone-layout-pill active" data-layout="crop" title="Single video filling full vertical screen">
+                <span>📱</span> Full (No Split)
+              </button>
+              <button class="phone-layout-pill" data-layout="split" title="Creator on top, gameplay on bottom">
+                <span>🎮</span> Split Screen
+              </button>
+              <button class="phone-layout-pill" data-layout="blur" title="Fit with blurred background">
+                <span>✨</span> Fit & Blurred
+              </button>
+              <button class="phone-layout-pill" data-layout="fit" title="Clean original video with black bars">
+                <span>⬛</span> Letterbox
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Studio Controls & Export Panel -->
+        <div class="controls-column">
+          <div class="studio-card card-glow">
+            <div class="card-header-row">
+              <div>
+                <span class="card-tag"><i data-lucide="sliders"></i> Studio Customizer</span>
+                <h3 class="card-title">Customize Your Vertical Short</h3>
+              </div>
+              <div class="card-header-actions">
+                <div class="virality-pill" id="active-clip-virality">
+                  <i data-lucide="flame"></i> 98% Viral Score
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm btn-open-pro" id="btn-open-pro-top" title="Open multi-track video editor with music, VFX, stickers & cuts">
+                  <i data-lucide="film"></i> <span>KineMaster Pro</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Layout Mode -->
+            <div class="customizer-group">
+              <label class="customizer-label">
+                <i data-lucide="layout"></i> Video Layout (9:16 Vertical)
+              </label>
+              <div class="layout-options-grid">
+                <div class="layout-card active" data-layout="crop">
+                  <div class="layout-visual layout-crop">
+                    <span>9:16 Full</span>
+                  </div>
+                  <div class="layout-meta">
+                    <strong>Full 9:16 (No Split)</strong>
+                    <span>100% Single Creator Video</span>
+                  </div>
+                </div>
+
+                <div class="layout-card" data-layout="split">
+                  <div class="layout-visual layout-split">
+                    <span class="v-top">Video</span>
+                    <span class="v-bot">Gameplay</span>
+                  </div>
+                  <div class="layout-meta">
+                    <strong>Split-Screen</strong>
+                    <span>Video on Top, Gameplay Below</span>
+                  </div>
+                </div>
+
+                <div class="layout-card" data-layout="blur">
+                  <div class="layout-visual layout-blur">
+                    <span>Studio Glow</span>
+                  </div>
+                  <div class="layout-meta">
+                    <strong>Fit & Blurred</strong>
+                    <span>Cinematic Blurred Background</span>
+                  </div>
+                </div>
+
+                <div class="layout-card" data-layout="fit">
+                  <div class="layout-visual layout-fit">
+                    <span>Clean Fit</span>
+                  </div>
+                  <div class="layout-meta">
+                    <strong>Clean Letterbox</strong>
+                    <span>Original Fit (Zero Cropping)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Subtitle Style -->
+            <div class="customizer-group">
+              <label class="customizer-label">
+                <i data-lucide="type"></i> Hormozi Captions Style
+              </label>
+              <div class="subtitle-styles-grid">
+                <button class="sub-style-btn active" data-substyle="hormozi">
+                  <span class="style-preview hormozi-text">YELLOW POP</span>
+                  <div class="sub-btn-meta">
+                    <span>Alex Hormozi</span>
+                    <span class="sub-lock-pill" data-req="pro">PRO ₹10</span>
+                  </div>
+                </button>
+                <button class="sub-style-btn" data-substyle="mrbeast">
+                  <span class="style-preview mrbeast-text">BEAST NEON</span>
+                  <div class="sub-btn-meta">
+                    <span>MrBeast Bold</span>
+                    <span class="sub-lock-pill" data-req="pro">PRO ₹10</span>
+                  </div>
+                </button>
+                <button class="sub-style-btn" data-substyle="cyber">
+                  <span class="style-preview cyber-text">CYBER CYAN</span>
+                  <div class="sub-btn-meta">
+                    <span>Cyberpunk</span>
+                    <span class="sub-lock-pill" data-req="pro">PRO ₹10</span>
+                  </div>
+                </button>
+                <button class="sub-style-btn" data-substyle="classic">
+                  <span class="style-preview classic-text">CLEAN WHITE</span>
+                  <div class="sub-btn-meta">
+                    <span>Classic Minimal</span>
+                    <span class="sub-lock-pill" data-req="pro">PRO ₹10</span>
+                  </div>
+                </button>
+                <button class="sub-style-btn" data-substyle="none" id="sub-style-none-btn">
+                  <span class="style-preview none-text">🚫 OFF</span>
+                  <div class="sub-btn-meta">
+                    <span>No Captions</span>
+                    <span class="sub-free-pill">FREE</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Captions & Spoken Script Editor -->
+            <div class="customizer-group">
+              <div class="caption-editor-header">
+                <label class="customizer-label">
+                  <i data-lucide="subtitles"></i> Captions & Spoken Words
+                </label>
+                <div class="caption-action-badges">
+                  <button type="button" class="btn-caption-action" id="btn-toggle-none" title="Quickly disable/enable captions">
+                    <i data-lucide="eye-off"></i> <span id="toggle-none-text">Hide Captions</span>
+                  </button>
+                  <button type="button" class="btn-caption-action" id="btn-ai-transcribe" title="Transcribe audio with local AI Whisper">
+                    <i data-lucide="mic"></i> <span>AI Whisper</span>
+                  </button>
+                  <button type="button" class="btn-caption-action" id="btn-sync-script" title="Auto-sync text evenly across clip duration">
+                    <i data-lucide="refresh-cw"></i> <span>Auto-Sync Words</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Script Textarea -->
+              <div class="caption-input-box">
+                <textarea 
+                  id="script-editor-input" 
+                  class="form-textarea" 
+                  rows="3" 
+                  placeholder="Type or edit the spoken captions here... (e.g. lyrics, roast, funny quote)"
+                ></textarea>
+                <div class="caption-helper-row">
+                  <span class="caption-hint" id="caption-chunks-counter">
+                    <i data-lucide="sparkles"></i> <span id="chunks-count-num">0</span> words synced
+                  </span>
+                  <span class="caption-tip">Live in preview &amp; burned to video</span>
+                </div>
+              </div>
+
+              <!-- Timed Chunks Scroller -->
+              <div class="caption-chunks-wrapper">
+                <div class="caption-chunks-label">
+                  <span><i data-lucide="list"></i> Timed Chunks (Click to jump):</span>
+                  <span id="chunks-status-pill" class="chunks-status-pill">Synced</span>
+                </div>
+                <div class="caption-chunks-scroller" id="caption-chunks-scroller">
+                  <!-- Dynamically populated -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Hook Banner Editor -->
+            <div class="customizer-group">
+              <label class="customizer-label" for="hook-banner-input">
+                <i data-lucide="sparkle"></i> Top Hook Banner (Stops the Scroll)
+              </label>
+              <input 
+                type="text" 
+                id="hook-banner-input" 
+                class="form-input" 
+                value="WAIT TILL THE END 😂💀"
+              >
+            </div>
+
+            <!-- Timestamp Adjuster -->
+            <div class="customizer-group">
+              <div class="trim-header">
+                <label class="customizer-label"><i data-lucide="scissors"></i> Precision Clip Trim</label>
+                <span class="trim-duration-badge" id="trim-duration-badge">Duration: 30.0s</span>
+              </div>
+              <div class="trim-inputs-row">
+                <div class="trim-field">
+                  <span>Start (s)</span>
+                  <input type="number" id="trim-start-input" step="0.5" value="0.0">
+                </div>
+                <div class="trim-field">
+                  <span>End (s)</span>
+                  <input type="number" id="trim-end-input" step="0.5" value="30.0">
+                </div>
+              </div>
+            </div>
+
+            <!-- Metadata & Copy Hub -->
+            <div class="customizer-group">
+              <label class="customizer-label"><i data-lucide="copy"></i> One-Click YouTube Shorts Metadata</label>
+              <div class="copy-box">
+                <div class="copy-item">
+                  <span class="copy-label">Viral Title:</span>
+                  <p id="copy-title-text" class="copy-text">Title loading...</p>
+                  <button class="btn btn-xs btn-secondary" onclick="copyText('copy-title-text')">Copy Title</button>
+                </div>
+                <div class="copy-item">
+                  <span class="copy-label">Tags & SEO:</span>
+                  <p id="copy-tags-text" class="copy-text">Tags loading...</p>
+                  <button class="btn btn-xs btn-secondary" onclick="copyText('copy-tags-text')">Copy Tags</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Render / Export Button -->
+            <div class="export-box">
+              <button id="render-btn" class="btn btn-primary btn-xl w-full pulse-glow">
+                <i data-lucide="download"></i>
+                <span>Render & Download Short (1080x1920 MP4)</span>
+              </button>
+              <p class="export-note">
+                <i data-lucide="shield-check"></i> High Bitrate H.264 • Audio Synced • 100% Monetization Ready
+              </p>
+            </div>
+
+            <!-- Render Progress / Result Box -->
+            <div id="render-result-box" class="render-result-card" style="display: none;">
+              <div class="render-spinner" id="render-spinner"></div>
+              <div class="render-details">
+                <h4 id="render-status-title">Rendering High Quality Vertical Video...</h4>
+                <p id="render-status-sub">Compositing split-screen gameplay, encoding audio, burning captions via FFmpeg</p>
+                <div class="render-actions-row" id="render-actions-row" style="display: none;">
+                  <a id="download-short-link" href="#" class="btn btn-success btn-lg">
+                    <i data-lucide="download-cloud"></i> Download Short (.MP4)
+                  </a>
+                  <button id="copy-clip-url-btn" class="btn btn-secondary btn-lg" type="button">
+                    <i data-lucide="copy"></i> Copy Clip Link
+                  </button>
+                  <a id="open-clip-tab-link" href="#" target="_blank" class="btn btn-outline btn-lg">
+                    <i data-lucide="external-link"></i> Open Video
+                  </a>
+                </div>
+                <!-- Direct link box -->
+                <div class="clip-link-box" id="clip-link-box" style="display: none;">
+                  <i data-lucide="link" style="width: 14px; height: 14px; color: var(--text-muted); flex-shrink: 0;"></i>
+                  <input type="text" id="direct-clip-url-input" class="copy-url-input" readonly>
+                  <button type="button" class="btn-copy-sm" id="btn-copy-inline">Copy</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- KineMaster Pro Studio: Multi-Track Timeline Video Editor          -->
+    <!-- ================================================================= -->
+    <section id="pro-editor-section" class="pro-editor-section" style="display: none;">
+      <div class="pro-editor-header">
+        <div class="pro-header-left">
+          <span class="pro-badge"><i data-lucide="sparkles"></i> KINEMASTER PRO STUDIO</span>
+          <h2 class="pro-editor-title">Multi-Track Timeline Editor</h2>
+          <span class="pro-clip-tag" id="pro-active-clip-name">Clip: Waiting for selection...</span>
+        </div>
+        <div class="pro-header-actions">
+          <div class="pro-timecode-badge">
+            <i data-lucide="clock"></i> <span id="pro-timecode-display">00:00.0 / 00:30.0</span>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" id="pro-btn-back-studio">
+            <i data-lucide="arrow-left"></i> Standard Studio
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" id="pro-btn-render">
+            <i data-lucide="download"></i> Render Short (Pro)
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Pro Studio Workbench -->
+      <div class="pro-workbench-grid">
+        
+        <!-- Left: 9:16 Video Canvas & Overlays Monitor -->
+        <div class="pro-canvas-col">
+          <div class="pro-monitor-frame">
+            <div class="pro-monitor-header">
+              <span class="monitor-dot live-dot"></span>
+              <span class="monitor-label">9:16 LIVE MONITOR</span>
+              <span class="monitor-res-pill">1080x1920 • 60FPS</span>
+            </div>
+            
+            <div class="pro-screen-wrapper" id="pro-screen-wrapper">
+              <!-- Video Layer -->
+              <video id="pro-preview-video" class="pro-video-player" playsinline muted loop></video>
+
+              <!-- Realtime Filter Overlay Class Layer -->
+              <div class="pro-filter-overlay" id="pro-filter-overlay"></div>
+
+              <!-- Interactive Emojis & Stickers Overlay Canvas -->
+              <div class="pro-stickers-overlay" id="pro-stickers-overlay">
+                <!-- Dynamically rendered stickers at their timestamps -->
+              </div>
+
+              <!-- Timed Captions Overlay -->
+              <div class="pro-captions-overlay" id="pro-captions-overlay">
+                <div class="pro-caption-bubble" id="pro-caption-active">CAPTIONS READY</div>
+              </div>
+
+              <!-- Hook Banner Overlay -->
+              <div class="pro-hook-banner" id="pro-hook-banner" style="display: none;">
+                <span id="pro-hook-banner-text">WAIT TILL THE END 💀</span>
+              </div>
+
+              <!-- Canvas Center Play Pause Trigger -->
+              <div class="pro-play-overlay" id="pro-play-overlay">
+                <i data-lucide="play" id="pro-play-icon"></i>
+              </div>
+            </div>
+
+            <!-- Canvas Transport Bar -->
+            <div class="pro-transport-bar">
+              <button type="button" class="transport-btn" id="pro-btn-step-back" title="Step -1 sec">
+                <i data-lucide="skip-back"></i>
+              </button>
+              <button type="button" class="transport-btn play-btn" id="pro-btn-play-toggle" title="Play / Pause">
+                <i data-lucide="play" id="pro-btn-play-icon"></i>
+              </button>
+              <button type="button" class="transport-btn" id="pro-btn-step-forward" title="Step +1 sec">
+                <i data-lucide="skip-forward"></i>
+              </button>
+              <button type="button" class="transport-btn" id="pro-btn-mute-toggle" title="Mute / Unmute">
+                <i data-lucide="volume-2" id="pro-btn-mute-icon"></i>
+              </button>
+              <div class="transport-spacer"></div>
+              <div class="speed-selector-group">
+                <span class="speed-label"><i data-lucide="zap"></i> Speed:</span>
+                <select id="pro-speed-select" class="pro-speed-dropdown">
+                  <option value="0.75">0.75x (Slow Mo)</option>
+                  <option value="1.0" selected>1.0x (Normal)</option>
+                  <option value="1.25">1.25x (Fast Paced)</option>
+                  <option value="1.5">1.5x (Speed Up)</option>
+                  <option value="2.0">2.0x (Hyper)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: KineMaster Action Hub / Inspector Tabs -->
+        <div class="pro-tools-col">
+          <div class="pro-tools-card card-glow">
+            
+            <!-- Tool Navigation Tabs -->
+            <div class="pro-tabs-header">
+              <button type="button" class="pro-tab-item active" data-tab="cut">
+                <i data-lucide="scissors"></i> <span>Cut & Trim</span>
+              </button>
+              <button type="button" class="pro-tab-item" data-tab="music">
+                <i data-lucide="music"></i> <span>Music</span>
+              </button>
+              <button type="button" class="pro-tab-item" data-tab="effects">
+                <i data-lucide="wand-2"></i> <span>Effects</span>
+              </button>
+              <button type="button" class="pro-tab-item" data-tab="stickers">
+                <i data-lucide="smile"></i> <span>Emojis</span>
+              </button>
+              <button type="button" class="pro-tab-item" data-tab="sfx">
+                <i data-lucide="volume-1"></i> <span>SFX</span>
+              </button>
+              <button type="button" class="pro-tab-item" data-tab="text">
+                <i data-lucide="type"></i> <span>Text</span>
+              </button>
+            </div>
+
+            <!-- Tab Content 1: Cut & Trim -->
+            <div class="pro-tab-content active" id="tab-content-cut">
+              <div class="tool-group-title">
+                <i data-lucide="scissors"></i> Split, Slice & Pacing
+              </div>
+              <p class="tool-group-desc">Cut dead pauses, shorten hooks, and create jump cuts like professional short-form editors.</p>
+              
+              <div class="cut-actions-row">
+                <button type="button" class="btn btn-secondary btn-sm" id="pro-btn-split-at-playhead">
+                  <i data-lucide="scissors"></i> <span>Split at Cursor</span>
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" id="pro-btn-trim-left">
+                  <i data-lucide="chevron-left"></i> <span>Trim Left</span>
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" id="pro-btn-trim-right">
+                  <span>Trim Right</span> <i data-lucide="chevron-right"></i>
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" id="pro-btn-reset-cuts">
+                  <i data-lucide="rotate-ccw"></i> <span>Reset</span>
+                </button>
+              </div>
+
+              <div class="trim-inputs-grid">
+                <div class="form-group-sm">
+                  <label>Start Sec</label>
+                  <input type="number" id="pro-trim-start" step="0.1" value="0.0">
+                </div>
+                <div class="form-group-sm">
+                  <label>End Sec</label>
+                  <input type="number" id="pro-trim-end" step="0.1" value="30.0">
+                </div>
+                <div class="form-group-sm">
+                  <label>Total Duration</label>
+                  <span class="pro-calc-badge" id="pro-duration-calc">30.0s</span>
+                </div>
+              </div>
+
+              <div class="cut-tips-box">
+                <span class="tip-badge">PRO TIP</span>
+                <span>Shorts with a jump-cut in the first 2 seconds see a <strong>34% increase in completion rate</strong>.</span>
+              </div>
+            </div>
+
+            <!-- Tab Content 2: Background Music & Audio Mixer -->
+            <div class="pro-tab-content" id="tab-content-music">
+              <div class="tool-group-title">
+                <i data-lucide="music"></i> Background Music & Ducking Mixer
+              </div>
+              <p class="tool-group-desc">Add trending background tracks to amplify tension and emotional momentum.</p>
+
+              <!-- Music Library Grid -->
+              <div class="music-library-grid" id="pro-music-library">
+                <!-- Injected dynamically via JS from /api/audio/assets -->
+              </div>
+
+              <!-- Audio Sliders Mixer -->
+              <div class="audio-mixer-box">
+                <div class="mixer-row">
+                  <label><i data-lucide="mic"></i> Voice Speech Volume: <strong id="voice-vol-val">100%</strong></label>
+                  <input type="range" id="pro-voice-volume" min="0" max="200" value="100" class="pro-slider">
+                </div>
+                <div class="mixer-row">
+                  <label><i data-lucide="music-2"></i> Music Track Volume: <strong id="music-vol-val">20%</strong></label>
+                  <input type="range" id="pro-music-volume" min="0" max="100" value="20" class="pro-slider">
+                </div>
+                <div class="ducking-toggle-row">
+                  <label class="switch-wrap">
+                    <input type="checkbox" id="pro-ducking-toggle" checked>
+                    <span class="slider-toggle"></span>
+                  </label>
+                  <span>Auto-Duck Music (-6dB) When Speech Is Active</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 3: Visual Effects & Color Filters -->
+            <div class="pro-tab-content" id="tab-content-effects">
+              <div class="tool-group-title">
+                <i data-lucide="wand-2"></i> Cinematic LUTs & Color Grading
+              </div>
+              <p class="tool-group-desc">Apply visual color grades and camera FX that stop users from scrolling past.</p>
+
+              <div class="filters-grid">
+                <div class="filter-card active" data-filter="normal">
+                  <div class="filter-swatch normal-swatch"></div>
+                  <span>Original (Clean)</span>
+                </div>
+                <div class="filter-card" data-filter="cyberpunk">
+                  <div class="filter-swatch cyberpunk-swatch"></div>
+                  <span>Cyberpunk Neon</span>
+                </div>
+                <div class="filter-card" data-filter="warm">
+                  <div class="filter-swatch warm-swatch"></div>
+                  <span>Warm Golden Film</span>
+                </div>
+                <div class="filter-card" data-filter="contrast">
+                  <div class="filter-swatch contrast-swatch"></div>
+                  <span>Moody Contrast</span>
+                </div>
+                <div class="filter-card" data-filter="vintage_bw">
+                  <div class="filter-swatch bw-swatch"></div>
+                  <span>Noir Vintage B&W</span>
+                </div>
+                <div class="filter-card" data-filter="vibrant">
+                  <div class="filter-swatch vibrant-swatch"></div>
+                  <span>Vibrant Pop 4K</span>
+                </div>
+                <div class="filter-card" data-filter="glitch">
+                  <div class="filter-swatch glitch-swatch"></div>
+                  <span>Glitch Vibe</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 4: Emojis & Stickers Overlay -->
+            <div class="pro-tab-content" id="tab-content-stickers">
+              <div class="tool-group-title">
+                <i data-lucide="smile"></i> Emojis & Viral Action Badges
+              </div>
+              <p class="tool-group-desc">Add animated emojis and callouts to punctuate funny moments and shocking reactions.</p>
+
+              <!-- Emoji Quick Clicker -->
+              <div class="emoji-picker-row">
+                <span class="quick-emoji-btn" data-emoji="🔥">🔥</span>
+                <span class="quick-emoji-btn" data-emoji="💀">💀</span>
+                <span class="quick-emoji-btn" data-emoji="😱">😱</span>
+                <span class="quick-emoji-btn" data-emoji="💰">💰</span>
+                <span class="quick-emoji-btn" data-emoji="🚀">🚀</span>
+                <span class="quick-emoji-btn" data-emoji="👑">👑</span>
+                <span class="quick-emoji-btn" data-emoji="⚠️">⚠️</span>
+                <span class="quick-emoji-btn" data-emoji="🚨">🚨</span>
+                <span class="quick-emoji-btn" data-emoji="🤯">🤯</span>
+                <span class="quick-emoji-btn" data-emoji="🤡">🤡</span>
+                <span class="quick-emoji-btn" data-emoji="🎯">🎯</span>
+                <span class="quick-emoji-btn" data-emoji="💯">💯</span>
+                <span class="quick-emoji-btn" data-emoji="🤫">🤫</span>
+              </div>
+
+              <!-- Action Badges -->
+              <div class="badge-presets-row">
+                <button type="button" class="btn-badge-preset" data-text="SUBSCRIBE FOR MORE">🔴 SUBSCRIBE</button>
+                <button type="button" class="btn-badge-preset" data-text="LIKE & FOLLOW">❤️ LIKE & FOLLOW</button>
+                <button type="button" class="btn-badge-preset" data-text="WAIT TILL THE END">⏳ WAIT FOR IT</button>
+                <button type="button" class="btn-badge-preset" data-text="MIND BLOWN">🤯 MIND BLOWN</button>
+              </div>
+
+              <!-- Sticker Control Form -->
+              <div class="sticker-add-form">
+                <div class="sticker-form-row">
+                  <input type="text" id="pro-sticker-custom-text" placeholder="Or type custom text badge (e.g. BRO WHAT?)...">
+                  <button type="button" class="btn btn-primary btn-sm" id="pro-btn-add-sticker">
+                    <i data-lucide="plus"></i> Add to Timeline
+                  </button>
+                </div>
+                <div class="sticker-position-row">
+                  <label>Screen Position:</label>
+                  <select id="pro-sticker-pos" class="pro-select-sm">
+                    <option value="top">Top</option>
+                    <option value="center" selected>Center</option>
+                    <option value="bottom">Bottom</option>
+                  </select>
+                  <label>Duration:</label>
+                  <select id="pro-sticker-dur" class="pro-select-sm">
+                    <option value="1.5">1.5 sec</option>
+                    <option value="3.0" selected>3.0 sec</option>
+                    <option value="5.0">5.0 sec</option>
+                    <option value="all">Full Short</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Active Stickers List -->
+              <div class="active-stickers-container">
+                <span class="stickers-list-label">Active Emoji Layers (<span id="pro-stickers-count">0</span>):</span>
+                <div class="active-stickers-list" id="pro-active-stickers-list">
+                  <span class="empty-hint">No stickers added yet. Click an emoji above to add one at the current playhead.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 5: Sound Effects (SFX) -->
+            <div class="pro-tab-content" id="tab-content-sfx">
+              <div class="tool-group-title">
+                <i data-lucide="volume-1"></i> Sound Effects Library (SFX)
+              </div>
+              <p class="tool-group-desc">Drop instant SFX hits at punchlines to spike viewer dopamine.</p>
+
+              <div class="sfx-grid" id="pro-sfx-grid">
+                <!-- Rendered dynamically via JS from /api/audio/assets -->
+              </div>
+
+              <div class="active-sfx-container">
+                <span class="stickers-list-label">Active SFX Hits (<span id="pro-sfx-count">0</span>):</span>
+                <div class="active-sfx-list" id="pro-active-sfx-list">
+                  <span class="empty-hint">Click any sound effect above to place it at the current second.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content 6: Text & Banner Overlay -->
+            <div class="pro-tab-content" id="tab-content-text">
+              <div class="tool-group-title">
+                <i data-lucide="type"></i> Top Hook Banner & Custom Titles
+              </div>
+              <p class="tool-group-desc">Add a high-converting curiosity headline that stops thumb scrolling.</p>
+
+              <div class="form-group">
+                <label>Top Hook Banner Text</label>
+                <input type="text" id="pro-banner-input" placeholder="e.g. WAIT TILL THE END 😂💀" value="WAIT TILL THE END 😂💀">
+              </div>
+
+              <div class="hook-preset-pills">
+                <span class="hook-pill" data-hook="HE WAS NOT READY FOR THIS 😂">HE WAS NOT READY</span>
+                <span class="hook-pill" data-hook="BRO DID NOT HESITATE 💀">DID NOT HESITATE</span>
+                <span class="hook-pill" data-hook="THE GREATEST RESPONSE EVER 🚀">GREATEST RESPONSE</span>
+                <span class="hook-pill" data-hook="99% OF PEOPLE DON'T KNOW THIS 🤫">99% DON'T KNOW</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- Visual Multi-Track Timeline (KineMaster Studio Style)            -->
+      <!-- ================================================================= -->
+      <div class="pro-timeline-container card-glow">
+        
+        <!-- Timeline Control Bar -->
+        <div class="timeline-top-bar">
+          <div class="timeline-tools-left">
+            <button type="button" class="btn-timeline-tool" id="tl-btn-split" title="Cut/Split Video at Playhead">
+              <i data-lucide="scissors"></i> <span>Split</span>
+            </button>
+            <button type="button" class="btn-timeline-tool" id="tl-btn-add-music" title="Go to Music Tab">
+              <i data-lucide="music"></i> <span>Add Music</span>
+            </button>
+            <button type="button" class="btn-timeline-tool" id="tl-btn-add-sticker" title="Add Emoji at Cursor">
+              <i data-lucide="smile"></i> <span>Add Emoji</span>
+            </button>
+            <button type="button" class="btn-timeline-tool" id="tl-btn-clear" title="Clear all overlays">
+              <i data-lucide="trash-2"></i> <span>Clear Overlays</span>
+            </button>
+          </div>
+
+          <div class="timeline-center-clock">
+            <span class="tl-needle-time" id="tl-playhead-time">00:00.00</span>
+          </div>
+
+          <div class="timeline-zoom-controls">
+            <button type="button" class="btn-zoom" id="tl-btn-zoom-out" title="Zoom Out Timeline"><i data-lucide="zoom-out"></i></button>
+            <span class="zoom-level-text" id="tl-zoom-level">100%</span>
+            <button type="button" class="btn-zoom" id="tl-btn-zoom-in" title="Zoom In Timeline"><i data-lucide="zoom-in"></i></button>
+          </div>
+        </div>
+
+        <!-- Scrollable Tracks Workspace -->
+        <div class="timeline-tracks-viewport" id="timeline-tracks-viewport">
+          
+          <!-- Moving Red Needle Playhead -->
+          <div class="timeline-playhead-needle" id="timeline-playhead-needle">
+            <div class="needle-head"></div>
+            <div class="needle-line"></div>
+          </div>
+
+          <!-- Time Ruler (0s, 5s, 10s...) -->
+          <div class="timeline-ruler" id="timeline-ruler">
+            <!-- Dynamically generated tick markers -->
+          </div>
+
+          <!-- Track 1: Video Track (V1) -->
+          <div class="timeline-track-row track-video">
+            <div class="track-header-label">
+              <i data-lucide="video"></i> <span>V1: Video</span>
+            </div>
+            <div class="track-lane" id="track-lane-video">
+              <div class="track-clip-block video-block" id="tl-video-block">
+                <span class="block-title"><i data-lucide="film"></i> Primary Video Clip</span>
+                <span class="block-dur" id="tl-video-dur-tag">30.0s</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track 2: Subtitles Track (T1) -->
+          <div class="timeline-track-row track-captions">
+            <div class="track-header-label">
+              <i data-lucide="subtitles"></i> <span>T1: Captions</span>
+            </div>
+            <div class="track-lane" id="track-lane-captions">
+              <!-- Dynamically populated subtitle word blocks -->
+            </div>
+          </div>
+
+          <!-- Track 3: Background Music Track (A1) -->
+          <div class="timeline-track-row track-music">
+            <div class="track-header-label">
+              <i data-lucide="music-2"></i> <span>A1: Music</span>
+            </div>
+            <div class="track-lane" id="track-lane-music">
+              <div class="track-clip-block music-block" id="tl-music-block" style="display: none;">
+                <span class="block-title" id="tl-music-title"><i data-lucide="music"></i> Phonk Drill Beat</span>
+                <span class="block-dur" id="tl-music-vol-tag">Vol: 20%</span>
+              </div>
+              <div class="track-empty-state" id="tl-music-empty">
+                <span>No background music active. Select a track in the Music tab.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track 4: Emojis & Stickers Track (O1) -->
+          <div class="timeline-track-row track-stickers">
+            <div class="track-header-label">
+              <i data-lucide="smile"></i> <span>O1: Emojis</span>
+            </div>
+            <div class="track-lane" id="track-lane-stickers">
+              <!-- Dynamically injected emoji blocks -->
+            </div>
+          </div>
+
+          <!-- Track 5: Sound Effects Track (S1) -->
+          <div class="timeline-track-row track-sfx">
+            <div class="track-header-label">
+              <i data-lucide="volume-1"></i> <span>S1: SFX</span>
+            </div>
+            <div class="track-lane" id="track-lane-sfx">
+              <!-- Dynamically injected SFX markers -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Pricing & Subscription Plans Section -->
+    <section id="pricing-section" class="pricing-section">
+      <div class="pricing-header-wrapper">
+        <div class="section-badge"><i data-lucide="crown"></i> Affordable Creator Plans</div>
+        <h2 class="section-title">Upgrade Your Shorts with <span class="gradient-text">Pro Captions & Ultra Edits</span></h2>
+        <p class="section-subtext">Start free with 10 tries. Unlock viral Hormozi subtitles for just ₹10, or get the entire KineMaster Pro Studio for ₹50.</p>
+      </div>
+
+      <div class="pricing-cards-grid">
+        
+        <!-- Tier 1: Free Starter -->
+        <div class="pricing-card" id="pricing-card-free">
+          <div class="pricing-card-header">
+            <span class="plan-badge">FREE STARTER</span>
+            <h3 class="plan-title">Free Trial</h3>
+            <p class="plan-desc">Test out the AI Clipper on any video with zero payment.</p>
+            <div class="plan-price-row">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">0</span>
+              <span class="plan-period">/ 10 tries</span>
+            </div>
+            <div class="plan-tries-indicator">
+              <i data-lucide="zap"></i> <span id="pricing-free-tries-text">10 free tries remaining</span>
+            </div>
+          </div>
+
+          <div class="plan-features-list">
+            <div class="feature-item included"><i data-lucide="check"></i> <span><strong>10 Free</strong> Video Generations</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>9:16 Vertical Smart Crop & Blur</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>AI Hook & Retention Virality Score</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>720p HD Video Export</span></div>
+            <div class="feature-item locked"><i data-lucide="lock"></i> <span>Dynamic Hormozi & MrBeast Captions</span></div>
+            <div class="feature-item locked"><i data-lucide="lock"></i> <span>KineMaster Multi-Track Timeline Editor</span></div>
+            <div class="feature-item locked"><i data-lucide="lock"></i> <span>Background Music & SFX Audio Mixing</span></div>
+          </div>
+
+          <div class="pricing-card-footer">
+            <button class="btn btn-secondary w-full" id="btn-select-free" onclick="switchTier('free')">
+              <i data-lucide="user"></i> Current Free Tier
+            </button>
+          </div>
+        </div>
+
+        <!-- Tier 2: Pro Creator (₹10) - POPULAR -->
+        <div class="pricing-card popular card-glow" id="pricing-card-pro">
+          <div class="popular-ribbon"><i data-lucide="flame"></i> 90% CHOOSE THIS</div>
+          <div class="pricing-card-header">
+            <span class="plan-badge popular-badge">VIRAL CAPTIONS PASS</span>
+            <h3 class="plan-title">Pro Creator</h3>
+            <p class="plan-desc">Unlock viral word-by-word dynamic captions that double audience retention.</p>
+            <div class="plan-price-row">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">10</span>
+              <span class="plan-period">one-time</span>
+            </div>
+            <div class="plan-tries-indicator pro-indicator">
+              <i data-lucide="sparkles"></i> <span>50 High-Yield Renders Included</span>
+            </div>
+          </div>
+
+          <div class="plan-features-list">
+            <div class="feature-item included"><i data-lucide="check"></i> <span><strong>50 Viral Video</strong> Generations</span></div>
+            <div class="feature-item highlight"><i data-lucide="check"></i> <span><strong>🔥 Alex Hormozi</strong> Captions (Yellow/Green)</span></div>
+            <div class="feature-item highlight"><i data-lucide="check"></i> <span><strong>💥 MrBeast Pop</strong> Captions (Comic Neon)</span></div>
+            <div class="feature-item highlight"><i data-lucide="check"></i> <span><strong>⚡ Cyberpunk</strong> Cyan Glowing Subtitles</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>Whisper AI Auto-Sync Audio Transcription</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>1080p Full HD High Bitrate Export</span></div>
+            <div class="feature-item locked"><i data-lucide="lock"></i> <span>KineMaster Multi-Track Timeline (Ultra Only)</span></div>
+          </div>
+
+          <div class="pricing-card-footer">
+            <button class="btn btn-primary w-full btn-glow" onclick="window.openSubscriptionModal('pro')">
+              <i data-lucide="zap"></i> Get Pro Captions (₹10)
+            </button>
+          </div>
+        </div>
+
+        <!-- Tier 3: Ultra Studio (₹50) - ALL FEATURES -->
+        <div class="pricing-card ultra card-glow" id="pricing-card-ultra">
+          <div class="ultra-ribbon"><i data-lucide="crown"></i> FULL SUITE UNLOCKED</div>
+          <div class="pricing-card-header">
+            <span class="plan-badge ultra-badge">ALL ACCESS PASS</span>
+            <h3 class="plan-title">Ultra Studio</h3>
+            <p class="plan-desc">Full KineMaster Pro multi-track editor, visual effects, music, and unlimited exports.</p>
+            <div class="plan-price-row">
+              <span class="plan-currency">₹</span>
+              <span class="plan-amount">50</span>
+              <span class="plan-period">all-access</span>
+            </div>
+            <div class="plan-tries-indicator ultra-indicator">
+              <i data-lucide="infinity"></i> <span>Unlimited Video Renders Forever</span>
+            </div>
+          </div>
+
+          <div class="plan-features-list">
+            <div class="feature-item highlight-ultra"><i data-lucide="check"></i> <span><strong>Unlimited Generations</strong> & Exports</span></div>
+            <div class="feature-item highlight-ultra"><i data-lucide="check"></i> <span><strong>🎬 Full KineMaster Pro</strong> Multi-Track Editor</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>All Pro Captions (Hormozi, MrBeast, Cyber)</span></div>
+            <div class="feature-item highlight-ultra"><i data-lucide="check"></i> <span>🎵 Background Music Library (Phonk, LoFi, Viral)</span></div>
+            <div class="feature-item highlight-ultra"><i data-lucide="check"></i> <span>🔊 SFX Hits (Vine Boom, Cha-Ching, Whoosh)</span></div>
+            <div class="feature-item highlight-ultra"><i data-lucide="check"></i> <span>😎 Emoji Sticker Overlays (🔥, 💀, 🚀, 💰)</span></div>
+            <div class="feature-item highlight-ultra"><i data-lucide="check"></i> <span>✨ Cinematic VFX Color Grading & Filters</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>⚡ Speed Control (0.5x - 2.0x Ramping)</span></div>
+            <div class="feature-item included"><i data-lucide="check"></i> <span>🚀 60 FPS Ultra HD Silk Smooth Export</span></div>
+          </div>
+
+          <div class="pricing-card-footer">
+            <button class="btn btn-primary w-full btn-ultra-glow" onclick="window.openSubscriptionModal('ultra')">
+              <i data-lucide="crown"></i> Get Ultra Studio (₹50)
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Developer Mode Owner Banner -->
+      <div class="dev-mode-banner">
+        <div class="dev-banner-content">
+          <div class="dev-banner-icon">🛠️</div>
+          <div class="dev-banner-text">
+            <h4>App Owner & Developer Control</h4>
+            <p>You have full permanent developer privileges. Status: <strong id="dev-banner-status" class="text-emerald">ACTIVE (Unlimited Free)</strong></p>
+          </div>
+        </div>
+        <div class="dev-banner-actions">
+          <button class="btn btn-secondary btn-sm" onclick="toggleDevMode()" id="btn-toggle-dev-mode">
+            <i data-lucide="refresh-cw"></i> Switch to Free Mode (Test)
+          </button>
+          <button class="btn btn-primary btn-sm" onclick="promptDevPasscode()">
+            <i data-lucide="key"></i> Owner Passcode
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Monetization Blueprint Section -->
+    <section id="monetization-section" class="info-section">
+      <div class="section-badge"><i data-lucide="trending-up"></i> Faceless AI Blueprint</div>
+      <h2 class="section-title">How To Make <span class="gradient-text">$3,000 - $10,000/Month</span> With Faceless YouTube Shorts</h2>
+      <p class="section-subtext">The exact formula used by multi-million subscriber clip channels with zero on-camera experience.</p>
+
+      <div class="strategy-cards-grid">
+        <div class="strategy-card">
+          <div class="strat-icon">📱</div>
+          <h3>1. The Split-Screen Watchtime Hack</h3>
+          <p>
+            The YouTube Shorts algorithm rewards <strong>Average Percentage Viewed (APV)</strong> above 100%.
+            Adding hypnotic gameplay (Subway Surfers / Satisfying kinetic sand) at the bottom keeps viewers' eyes glued, doubling retention and triggering viral recommendations.
+          </p>
+        </div>
+
+        <div class="strategy-card">
+          <div class="strat-icon">⚡</div>
+          <h3>2. The 3-Second Rule & Hormozi Captions</h3>
+          <p>
+            80% of shorts are watched with sound muted or low. Bold, animated word-by-word captions with yellow/green highlights ensure total engagement before viewers can swipe away.
+          </p>
+        </div>
+
+        <div class="strategy-card">
+          <div class="strat-icon">💰</div>
+          <h3>3. The Monetization Triple-Stack</h3>
+          <p>
+            Don't rely just on YouTube Shorts AdSense. Combine:
+            <br>• <strong>AdSense RPM</strong> ($0.05 - $0.15 / 1K views)
+            <br>• <strong>Pinned Comment Affiliate Links</strong> (Audible, Amazon, SaaS tools)
+            <br>• <strong>TikTok Creator Rewards</strong> (Crossposting the same shorts)
+          </p>
+        </div>
+
+        <div class="strategy-card">
+          <div class="strat-icon">🗓️</div>
+          <h3>4. The 3x Daily Upload Cadence</h3>
+          <p>
+            Post 3 Shorts every single day:
+            <br>• <strong>Morning:</strong> 11:30 AM
+            <br>• <strong>Afternoon:</strong> 3:30 PM
+            <br>• <strong>Prime Evening:</strong> 8:00 PM
+            <br>Consistency signals authority to the YouTube recommendation algorithm within 14-21 days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Income Calculator Section -->
+    <section id="calculator-section" class="calculator-section">
+      <div class="calc-card card-glow">
+        <div class="calc-header">
+          <div>
+            <span class="sub-badge"><i data-lucide="calculator"></i> Earnings Forecaster</span>
+            <h2 class="section-title">Faceless Shorts <span class="gradient-text">Income Calculator</span></h2>
+            <p class="section-subtext">Estimate your monthly passive income based on views and monetization channels.</p>
+          </div>
+        </div>
+
+        <div class="calc-grid">
+          <div class="calc-controls">
+            
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span>Daily Shorts Views</span>
+                <strong id="views-display">100,000 views / day</strong>
+              </div>
+              <input type="range" id="views-slider" min="10000" max="2000000" step="10000" value="100000" class="range-slider">
+              <div class="slider-scale">
+                <span>10K</span>
+                <span>500K</span>
+                <span>1M</span>
+                <span>2M+</span>
+              </div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span>Niche AdSense RPM (per 1K views)</span>
+                <strong id="rpm-display">$0.08 RPM</strong>
+              </div>
+              <input type="range" id="rpm-slider" min="0.04" max="0.30" step="0.01" value="0.08" class="range-slider">
+              <div class="slider-scale">
+                <span>$0.04 (Memes)</span>
+                <span>$0.08 (Podcasts)</span>
+                <span>$0.20+ (Finance)</span>
+              </div>
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-label-row">
+                <span>Monthly Affiliate Sales (Pinned comment)</span>
+                <strong id="affiliate-display">30 sales / mo ($25 comm)</strong>
+              </div>
+              <input type="range" id="affiliate-slider" min="0" max="200" step="5" value="30" class="range-slider">
+            </div>
+
+          </div>
+
+          <!-- Earnings Breakdown Result -->
+          <div class="calc-results-card">
+            <span class="calc-result-tag">Estimated Monthly Revenue</span>
+            <div class="total-earnings" id="total-earnings-display">$990</div>
+            <span class="earnings-subtitle">Per month completely faceless</span>
+
+            <div class="earnings-breakdown-list">
+              <div class="breakdown-item">
+                <span><i data-lucide="youtube"></i> YouTube Shorts AdSense</span>
+                <strong id="adsense-subtotal">$240 / mo</strong>
+              </div>
+              <div class="breakdown-item">
+                <span><i data-lucide="video"></i> TikTok Creator Rewards (Crosspost)</span>
+                <strong id="tiktok-subtotal">$300 / mo</strong>
+              </div>
+              <div class="breakdown-item">
+                <span><i data-lucide="shopping-bag"></i> Pinned Affiliate Commissions</span>
+                <strong id="affiliate-subtotal">$750 / mo</strong>
+              </div>
+            </div>
+
+            <button class="btn btn-primary w-full" onclick="scrollToClipper()">
+              <i data-lucide="rocket"></i> Start Making Shorts Now
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer with Mandatory AdSense Legal Compliance Links -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand-icon small"><i data-lucide="zap"></i></div>
+        <span>ViralClip AI • Built with FastAPI, FFmpeg 9.0 & AI Virality Engine</span>
+      </div>
+      <div class="footer-legal-links">
+        <a href="/about.html" class="footer-link">About Us</a>
+        <span class="footer-divider">•</span>
+        <a href="/privacy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-divider">•</span>
+        <a href="/terms.html" class="footer-link">Terms of Service</a>
+        <span class="footer-divider">•</span>
+        <a href="/contact.html" class="footer-link">Contact & Support</a>
+      </div>
+      <p class="footer-copy">© 2026 ViralClip AI. All rights reserved. YouTube™ is a trademark of Google LLC. This application is an independent creative suite not affiliated with or endorsed by YouTube or Google LLC.</p>
+    </div>
+  </footer>
+
+  <!-- Subscription Checkout Modal -->
+  <div id="subscription-modal" class="modal-backdrop" style="display: none;">
+    <div class="modal-dialog subscription-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="sub-badge"><i data-lucide="crown"></i> ViralClip Upgrade</span>
+          <h3 class="modal-title" id="sub-modal-title">Upgrade to Pro Creator</h3>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="window.closeSubscriptionModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body subscription-modal-body">
+        
+        <!-- Plan Switcher Tabs -->
+        <div class="sub-plan-tabs">
+          <button type="button" class="sub-tab-btn" id="tab-plan-pro" onclick="selectModalPlan('pro')">
+            <span class="tab-title">⚡ Pro Captions</span>
+            <span class="tab-price">₹10</span>
+          </button>
+          <button type="button" class="sub-tab-btn" id="tab-plan-ultra" onclick="selectModalPlan('ultra')">
+            <span class="tab-title">👑 Ultra Studio</span>
+            <span class="tab-price">₹50</span>
+          </button>
+          <button type="button" class="sub-tab-btn" id="tab-plan-free" onclick="selectModalPlan('free')">
+            <span class="tab-title">🌱 Free Trial</span>
+            <span class="tab-price">₹0</span>
+          </button>
+        </div>
+
+        <!-- Plan Summary Box -->
+        <div class="sub-plan-summary" id="sub-plan-summary">
+          <div class="summary-highlight-row">
+            <div>
+              <h4 id="summary-plan-name">Pro Creator Pass</h4>
+              <p id="summary-plan-desc">Unlocks dynamic Hormozi yellow/green captions & 50 renders</p>
+            </div>
+            <div class="summary-price-tag" id="summary-price-tag">₹10</div>
+          </div>
+          <ul class="summary-perks" id="summary-perks-list">
+            <li><i data-lucide="check"></i> 50 Viral Video Generations</li>
+            <li><i data-lucide="check"></i> Hormozi & MrBeast Animated Captions</li>
+            <li><i data-lucide="check"></i> Whisper AI Word-by-Word Sync</li>
+            <li><i data-lucide="check"></i> 1080p Full HD Export</li>
+          </ul>
+        </div>
+
+        <!-- Payment Method Box (UPI & Instant Activation) -->
+        <div class="sub-payment-box" id="sub-payment-box">
+          <div class="payment-box-header">
+            <span class="payment-step-label">Instant UPI Payment (Google Pay / PhonePe / Paytm / Cred)</span>
+          </div>
+
+          <div class="upi-payment-grid">
+            <div class="upi-qr-card">
+              <div class="qr-frame">
+                <img id="upi-qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi%3A%2F%2Fpay%3Fpa%3D6303356281%40fam%26pn%3DViralClip%2520AI%26am%3D10%26cu%3DINR" alt="UPI QR Code" width="160" height="160">
+              </div>
+              <span class="qr-scan-hint">Scan with any UPI App</span>
+            </div>
+
+            <div class="upi-details-col">
+              <div class="upi-id-box">
+                <span class="upi-label">UPI ID / VPA</span>
+                <div class="upi-copy-row">
+                  <code id="upi-vpa-text">6303356281@fam</code>
+                  <button type="button" class="btn btn-secondary btn-sm" onclick="copyUpiId()">
+                    <i data-lucide="copy"></i> Copy
+                  </button>
+                </div>
+              </div>
+
+              <div class="upi-apps-row">
+                <span class="upi-app-pill">GPay</span>
+                <span class="upi-app-pill">PhonePe</span>
+                <span class="upi-app-pill">Paytm</span>
+                <span class="upi-app-pill">Cred</span>
+                <span class="upi-app-pill">BHIM</span>
+              </div>
+
+              <a id="btn-upi-deeplink" href="upi://pay?pa=6303356281@fam&pn=ViralClip%20AI&am=10&cu=INR" class="btn btn-secondary w-full btn-upi-app">
+                <i data-lucide="smartphone"></i> Pay via UPI App directly
+              </a>
+
+              <!-- Instant Simulation / Confirmation Button -->
+              <button type="button" class="btn btn-primary w-full" id="btn-confirm-payment" onclick="confirmPaymentSimulation()">
+                <i data-lucide="check-circle-2"></i> Confirm & Activate Tier
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Developer Mode Quick Access (For Owner) -->
+        <div class="dev-unlock-drawer">
+          <div class="dev-drawer-header">
+            <i data-lucide="shield-check"></i>
+            <span>Are you the App Creator / Developer?</span>
+          </div>
+          <p class="dev-drawer-sub">Owner accounts have permanent unlimited free access to all Pro & Ultra features.</p>
+          <div class="dev-action-row">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="activateDevModeImmediate()">
+              <i data-lucide="wrench"></i> I am the Owner (Instant Dev Mode)
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="promptDevPasscode()">
+              <i data-lucide="key"></i> Enter Dev PIN
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <i data-lucide="check" id="toast-icon"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <script src="js/app.js?v=2.8.1"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /uploads/
+Disallow: /output/
+Disallow: /outputs/
+
+User-agent: Googlebot
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Disallow: /api/
+
+Sitemap: https://viralclip-ai.onrender.com/sitemap.xml

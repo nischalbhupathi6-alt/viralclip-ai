@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv
+uploads/*.mp4
+uploads/*.jpg
+uploads/*.wav
+output/*.mp4
+output/*.jpg
+server_out.log
+server_err.log
+.git
+.github

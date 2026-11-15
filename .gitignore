@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Temporary video processing uploads and outputs
+uploads/*
+!uploads/.gitkeep
+output/*
+!output/.gitkeep
+outputs/*
+!outputs/.gitkeep
+
+# System, test dumps & logs
+.DS_Store
+Thumbs.db
+*.log
+test_yt_meta.json
+user_vid_info.json

@@ -1,0 +1,24 @@
+{
+  "name": "ViralClip AI - Faceless Shorts Pro",
+  "short_name": "ViralClip AI",
+  "description": "Turn any YouTube video or audio into viral 9:16 Shorts with Alex Hormozi captions & split-screen gameplay.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090f",
+  "theme_color": "#6366f1",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
