@@ -19,15 +19,17 @@ UPLOADS_DIR = os.path.join(BASE_DIR, "uploads")
 
 def resolve_yt_dlp_binary() -> str:
     """Finds best yt-dlp binary across Windows and Linux cloud containers."""
-    local_win = os.path.join(ENGINE_DIR, "yt-dlp.exe")
-    local_linux = os.path.join(ENGINE_DIR, "yt-dlp")
-    if os.path.exists(local_win) and os.path.getsize(local_win) > 1000:
-        return local_win
-    if os.path.exists(local_linux) and os.path.getsize(local_linux) > 1000:
-        return local_linux
-    system_bin = shutil.which("yt-dlp")
-    if system_bin:
-        return system_bin
+    if sys.platform == "win32":
+        local_win = os.path.join(ENGINE_DIR, "yt-dlp.exe")
+        if os.path.exists(local_win) and os.path.getsize(local_win) > 1000:
+            return local_win
+    else:
+        system_bin = shutil.which("yt-dlp")
+        if system_bin:
+            return system_bin
+        local_linux = os.path.join(ENGINE_DIR, "yt-dlp")
+        if os.path.exists(local_linux) and os.path.getsize(local_linux) > 1000:
+            return local_linux
     return "yt-dlp"
 
 YT_DLP_BIN = resolve_yt_dlp_binary()

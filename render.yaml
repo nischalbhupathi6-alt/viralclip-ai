@@ -2,9 +2,9 @@ services:
   - type: web
     name: viralclip-ai
     env: docker
-    plan: starter
+    plan: free
     autoDeploy: true
     healthCheckPath: /api/health
     envVars:
       - key: PORT
-        value: 8080
+        value: 10000

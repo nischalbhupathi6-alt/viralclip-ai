@@ -30,9 +30,9 @@ COPY . .
 # Ensure storage directories exist
 RUN mkdir -p uploads output assets engine
 
-# Default port
-ENV PORT=8080
-EXPOSE 8080
+# Default port - Render uses PORT (default 10000)
+ENV PORT=10000
+EXPOSE 10000
 
-# Run uvicorn bound to all interfaces on $PORT
-CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8080}"]
+# Run uvicorn bound to all interfaces on $PORT using python3 -m
+CMD ["sh", "-c", "python3 -m uvicorn app:app --host 0.0.0.0 --port ${PORT:-10000}"]
