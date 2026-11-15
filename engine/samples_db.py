@@ -4,7 +4,7 @@ High-retention, funny, and viral clips with real speech audio and studio visuals
 """
 
 import os
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from .viral_analyzer import build_viral_clip_object
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
